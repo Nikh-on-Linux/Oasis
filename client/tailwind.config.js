@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        'inter':["Inter","sans-serif"]
+      },
       colors: {
         text:{
           "heading-main":"#2E2F33",

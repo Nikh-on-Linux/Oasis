@@ -1,0 +1,17 @@
+{
+  "name": "oasis_backend",
+  "version": "1.0.0",
+  "description": "backend section of oasis - ecommerce website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harshit Maurya",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.46.2",
+    "bson": "^6.10.0",
+    "dotenv": "^16.4.6",
+    "express": "^4.21.1"
+  }
+}

@@ -14,7 +14,7 @@ router.get("/",async(req,res)=>{
 })
 
 
-router.get("/products/:id",async(req,res)=>{
+router.get("/:id",async(req,res)=>{
     try{
         let id = req.params.id;
         const { data, error } = await supabase.from('products').select().eq('itemId',id);
@@ -25,7 +25,7 @@ router.get("/products/:id",async(req,res)=>{
     }
 });
 
-router.post("/products",async(req,res)=>{
+router.post("/",async(req,res)=>{
     try{
         console.log(req.body);
         let itemId = new ObjectId();
@@ -46,13 +46,14 @@ router.post("/products",async(req,res)=>{
     }
 });
 
-router.put('/products/:id',async(req,res)=>{
+router.put('/:id',async(req,res)=>{
     try{    
         let id = req.params.id;
         const { data, error } = await supabase.from('products')
             .update(
             {
                 name : req.body.name,
+                updated_at : new Date(),
                 '3d_model_id' : req.body['3d_model_id'],
                 oldPrice : req.body.oldPrice,
                 newPrice : req.body.newPrice,
@@ -65,7 +66,7 @@ router.put('/products/:id',async(req,res)=>{
     }
 });
 
-router.delete('/products/:id',async(req,res)=>{
+router.delete('/:id',async(req,res)=>{
     try{    
         let id = req.params.id;
         const { data, error } = await supabase.from('products').select().eq('itemId',id);
